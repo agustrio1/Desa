@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [lembagaOpen, setLembagaOpen] = useState(false);
+  const [dusunOpen, setDusunOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -10,6 +11,10 @@ function Navbar() {
 
   const toggleDropdown = () => {
     setLembagaOpen(!lembagaOpen);
+  };
+
+  const toggleDusunMenu = () => {
+    setDusunOpen(!dusunOpen);
   };
 
   return (
@@ -79,6 +84,29 @@ function Navbar() {
                     className="block px-4 py-2 text-gray-800 hover:bg-blue-100">
                     LPMD
                   </a>
+                  <button
+                    onClick={toggleDusunMenu}
+                    className="mx-auto px-4 py-2 text-gray-800 hover:bg-blue-100">
+                    Dusun
+                  </button>
+                  {dusunOpen && (
+                    <ul className="py-1 bg-white rounded-md">
+                      <li>
+                        <a
+                          href="/dusun/1"
+                          className="block px-4 py-2 text-gray-800 hover:bg-blue-100">
+                          Dusun 1
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="/dusun/2"
+                          className="block px-4 py-2 text-gray-800 hover:bg-blue-100">
+                          Dusun 2
+                        </a>
+                      </li>
+                    </ul>
+                  )}
                 </div>
               </div>
             </div>
@@ -142,6 +170,31 @@ function Navbar() {
               <a href="/contact" className="text-gray-900 hover:text-blue-700">
                 Kontak
               </a>
+            </li>
+            <li>
+              <button
+                onClick={toggleDusunMenu}
+                className=" text-gray-800 hover:bg-blue-100">
+                Dusun
+              </button>
+              {dusunOpen && (
+                <ul className="py-1 bg-white rounded-md">
+                  <li>
+                    <a
+                      href="/dusun/1"
+                      className="block px-4 py-2 text-gray-800 hover:bg-blue-100">
+                      Dusun 1
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/dusun/2"
+                      className="block px-4 py-2 text-gray-800 hover:bg-blue-100">
+                      Dusun 2
+                    </a>
+                  </li>
+                </ul>
+              )}
             </li>
           </ul>
         </div>
