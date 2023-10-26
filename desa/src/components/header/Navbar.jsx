@@ -18,7 +18,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-lg">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-lg z-30 fixed w-full">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
           <h1 className="text-black font-semibold text-lg">DesaKu</h1>
